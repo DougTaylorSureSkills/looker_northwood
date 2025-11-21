@@ -1,5 +1,5 @@
 view: staffing {
-  sql_table_name: `cloud-training-demos.k12_nwhs.staffing`
+  sql_table_name: cloud-training-demos.k12_nwhs.staffing
     ;;
 
   dimension: aggregated_eval_summary {
@@ -82,8 +82,19 @@ view: staffing {
     sql: ${TABLE}.YearsExperience ;;
   }
 
-  measure: count {
-    type: count
-    drill_fields: [teacher_name]
+  measure: average_years_experience {
+    label: "Average Years of Experience"
+    type: average
+    # Use avg on the dimension to treat it as a numerical measure
+    sql: ${years_experience} ;;
+    value_format: "0.0"
+  }
+  
+  measure: average_growth_index_score {
+    label: "Average Student Growth Index"
+    type: average
+    # Use avg on the dimension to treat it as a numerical measure
+    sql: ${avg_growth_index} ;;
+    value_format: "0.0"
   }
 }
