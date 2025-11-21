@@ -1,4 +1,4 @@
-project_name: "miami_dade"
+project_name: "northwood"
 
 constant: CONNECTION_NAME {
   value: "bigquery_public_data_looker"
