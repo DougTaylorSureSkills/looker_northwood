@@ -2,21 +2,6 @@ connection: "bigquery_public_data_looker"
 
 include: "views/*.view.lkml"                # include all views in the views/ folder in this project
 
-explore: student_master {
-  from:  performance
-
-  join: demographics {
-    type: left_outer
-    relationship: many_to_many
-    sql_on: ${performance.student_id} = ${demographics.student_id};;
-  }
-  join: attendance{
-    type: left_outer
-    relationship: many_to_many
-    sql_on: ${performance.student_id} = ${attendance.student_id};;
-  }
-}
-
 ## 1. student_performance Explore (KPIs: Proficiency, Equity, Instructional Capacity)
 
 # Primary focus: Student assessment results and linking to demographics/staff.
@@ -105,3 +90,4 @@ explore: staff_capacity {
   # NOTE: Since staffing.AvgGrowthIndex already exists, you don't need to join performance and calculate the average here,
   # making this Explore very efficient for the Instructional Capacity KPI.
 }
+
