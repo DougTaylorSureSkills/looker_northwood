@@ -1,5 +1,5 @@
 view: attendance {
-  sql_table_name: `cloud-training-demos.k12_nwhs.attendance`
+  sql_table_name: cloud-training-demos.k12_nwhs.attendance
     ;;
 
   dimension: absences {
@@ -67,8 +67,27 @@ view: attendance {
     sql: ${TABLE}.TotalDays ;;
   }
 
-  measure: count {
-    type: count
-    drill_fields: [course_name]
+  measure: distinct_students_enrolled {
+    label: "Distinct Students Enrolled (Current Term)"
+    type: count_distinct
+    sql: ${student_id} ;;
+    drill_fields: [student_id, course_name]
+  }
+
+  measure: students_chronic_absent {
+    label: "Students Chronically Absent"
+    type: sum
+    # Summing the chronic_flag counts students who are chronically absent (flag = 1)
+    sql: ${chronic_flag} ;;
+    drill_fields: [student_id, course_name]
+  }
+
+  measure: chronic_absence_rate {
+    label: "Chronic Absence Rate (%)"
+    type: number
+    value_format: "0.00%"
+    # Formula: (Count of Chronically Absent Students) / (Count of Students Enrolled)
+    sql: ${students_chronic_absent} / NULLIF(${distinct_students_enrolled}, 0) ;;
+    # NOTE: This should be used in the course_attendance Explore
   }
 }
