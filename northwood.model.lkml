@@ -90,3 +90,9 @@ explore: staff_capacity {
   # NOTE: Since staffing.AvgGrowthIndex already exists, you don't need to join performance and calculate the average here,
   # making this Explore very efficient for the Instructional Capacity KPI.
 }
+
+explore: eligibility {
+  label: "Title I Audit Eligibility Data (Demographics)"
+  description: "Filter on SchoolYear and add booleans with original text data for audit purposes. Use for the EWI visualisation"
+  from:  title_i_audit_eligibility_data
+}
