@@ -24,73 +24,73 @@ view: title_i_audit_eligibility_data {
       }
 
   dimension: student_id {
-    description: "Unique ID for each student."
+    description: "Unique ID for each student"
     type: string
     sql: ${TABLE}.student_id ;;
   }
 
   dimension: school {
-    description: "The school that the student attends."
+    description: "The identifier of the school"
     type: string
     sql: ${TABLE}.school ;;
   }
 
   dimension: district {
-    description: "The district in whic hthe school resides."
+    description: "The school district"
     type: string
     sql: ${TABLE}.district ;;
   }
 
   dimension: school_year {
-    description: "The school year to which the data applies."
+    description: "The school year"
     type: string
     sql: ${TABLE}.school_year ;;
   }
 
   dimension: gender {
-    description: "The gender of the student."
+    description: "The student's gender marker"
     type: string
     sql: ${TABLE}.gender ;;
   }
 
   dimension: ethnicity {
-    description: "The ethnicity of the student."
+    description: "The student's ethnicity"
     type: string
     sql: ${TABLE}.echnicity ;;
   }
 
   dimension: home_language {
-    description: "The home lanuguage of the student."
+    description: "The student's home language"
     type: string
     sql: ${TABLE}.home_language ;;
   }
 
   dimension: sub_group {
-    description: "The sub-group to which the student belongs."
+    description: "The subgroup for a school in a district"
     type: string
     sql: ${TABLE}.sub_group ;;
   }
 
   dimension: econ_disadv {
-    description: "Whether or not the student is economically disadvantaged and elligible for Title I funding (Y/N). Maintained for auditing pursposes."
+    description: "The economically disadvantaged flag"
     type: string
     sql: ${TABLE}.econ_disadv ;;
   }
 
   dimension: ell_flag {
-    description: "Whether the student is currently an English Language Learner (Y/N). Maintained for auditing pursposes."
+    description: "The ELL flag for non-native English students"
     type: string
     sql: ${TABLE}.ell_flag ;;
   }
 
   dimension: is_econ_disadv {
-    description: "Boolean version of the econ_disadv field."
+    description: "Whether a student is economically disadvantaged Y/N"
     type: yesno
     sql: ${TABLE}.is_econ_disadv ;;
   }
 
   dimension: is_ell {
-    description: "Boolean version of the ell_flag field."
+    description: "Whether a student is a non-native English speaker Y/N"
     type: yesno
     sql: ${TABLE}.is_ell ;;
   }
