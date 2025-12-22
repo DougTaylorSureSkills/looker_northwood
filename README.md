@@ -1,2 +1,3 @@
-qwiklabs_looker
-Miami Dade Looker Challenge Lab
+#Looker Project
+
+##Northwood High School Student and Course K12 Data
