@@ -24,73 +24,73 @@ view: title_i_audit_eligibility_data {
       }
 
   dimension: student_id {
-    description: "Unique ID for each user that has ordered"
+    description: "Unique ID for each student."
     type: string
     sql: ${TABLE}.student_id ;;
   }
 
   dimension: school {
-    description: "The total number of orders for each user"
+    description: "The school that the student attends."
     type: string
     sql: ${TABLE}.school ;;
   }
 
   dimension: district {
-    description: "The total number of orders for each user"
+    description: "The district in whic hthe school resides."
     type: string
     sql: ${TABLE}.district ;;
   }
 
   dimension: school_year {
-    description: "The total number of orders for each user"
+    description: "The school year to which the data applies."
     type: string
     sql: ${TABLE}.school_year ;;
   }
 
   dimension: gender {
-    description: "The total number of orders for each user"
+    description: "The gender of the student."
     type: string
     sql: ${TABLE}.gender ;;
   }
 
   dimension: ethnicity {
-    description: "The total number of orders for each user"
+    description: "The ethnicity of the student."
     type: string
     sql: ${TABLE}.echnicity ;;
   }
 
   dimension: home_language {
-    description: "The total number of orders for each user"
+    description: "The home lanuguage of the student."
     type: string
     sql: ${TABLE}.home_language ;;
   }
 
   dimension: sub_group {
-    description: "The total number of orders for each user"
+    description: "The sub-group to which the student belongs."
     type: string
     sql: ${TABLE}.sub_group ;;
   }
 
   dimension: econ_disadv {
-    description: "The total number of orders for each user"
+    description: "Whether or not the student is economically disadvantaged and elligible for Title I funding (Y/N). Maintained for auditing pursposes."
     type: string
     sql: ${TABLE}.econ_disadv ;;
   }
 
   dimension: ell_flag {
-    description: "The total number of orders for each user"
+    description: "Whether the student is currently an English Language Learner (Y/N). Maintained for auditing pursposes."
     type: string
     sql: ${TABLE}.ell_flag ;;
   }
 
   dimension: is_econ_disadv {
-    description: "The total number of orders for each user"
+    description: "Boolean version of the econ_disadv field."
     type: yesno
     sql: ${TABLE}.is_econ_disadv ;;
   }
 
   dimension: is_ell {
-    description: "The total number of orders for each user"
+    description: "Boolean version of the ell_flag field."
     type: yesno
     sql: ${TABLE}.is_ell ;;
   }
