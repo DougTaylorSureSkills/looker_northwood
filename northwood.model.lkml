@@ -93,6 +93,6 @@ explore: staff_capacity {
 
 explore: eligibility {
   label: "Title I Audit Eligibility Data (Demographics)"
-  description: "Filter on SchoolYear and add booleans with original text data for audit purposes. Use for the EWI visualisation."
+  description: "Filter on SchoolYear and add booleans with original text data for audit purposes. Use for the EWI visualization."
   from:  title_i_audit_eligibility_data
 }
