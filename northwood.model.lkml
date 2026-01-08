@@ -64,7 +64,7 @@ explore: course_attendance {
     type: left_outer
     # Joining on Course ID and School Year
     sql_on: ${course_attendance.course_id} = ${course_reference.course_id}
-      AND ${course_attendance.school_year}attendance.school_year} = ${course_reference.school_year} ;;
+      AND ${course_attendance.school_year} = ${course_reference.school_year} ;;
     relationship: many_to_one
   }
 }
