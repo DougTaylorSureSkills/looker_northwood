@@ -100,18 +100,18 @@ view: performance {
     drill_fields: [student_id, teacher_id]
   }
 
-  measure: distinct_students_tested {
-    label: "Distinct Students Tested"
+  measure: distinct_student_tests {
+    label: "Distinct Student Tests"
     type: count_distinct
-    sql: ${student_id} ;;
-    drill_fields: [student_id, teacher_id]
+    sql: concat(${student_id}, "," , ${course_id} ;;
+    #drill_fields: [student_id, teacher_id]
   }
 
   measure: proficiency_rate {
     label: "Proficiency Rate (%)"
     type: number
     value_format: "0.00%"
-    # Formula: (Count of Proficient Students) / (Count of Students Tested)
-    sql: ${students_proficient} / NULLIF(${distinct_students_tested}, 0) ;;
+    # Formula: (Count of Proficient Students) / (Count of Student Tests)
+    sql: ${students_proficient} / NULLIF(${distinct_student_tests}, 0) ;;
   }
 }
