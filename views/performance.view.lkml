@@ -103,7 +103,7 @@ view: performance {
   measure: distinct_student_tests {
     label: "Distinct Student Tests"
     type: count_distinct
-    sql: concat(${student_id}, "," , ${course_id} ;;
+    sql: CONCAT(${student_id}, "," , ${course_id}) ;;
     #drill_fields: [student_id, teacher_id]
   }
 
@@ -112,6 +112,6 @@ view: performance {
     type: number
     value_format: "0.00%"
     # Formula: (Count of Proficient Students) / (Count of Student Tests)
-    sql: ${students_proficient} / NULLIF(${distinct_student_tests}, 0) ;;
+    sql: ${students_proficient} / ${distinct_student_tests} ;;
   }
 }
