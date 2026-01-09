@@ -58,6 +58,7 @@ view: demographics {
   }
 
   dimension: student_id {
+    primary_key: yes
     type: string
     sql: ${TABLE}.StudentID ;;
   }
