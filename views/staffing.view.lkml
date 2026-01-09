@@ -88,7 +88,7 @@ view: staffing {
     type: average
     # Use avg on the dimension to treat it as a numerical measure
     sql: ${years_experience} ;;
-    value_format: "0.0"
+    value_format: "0.00"
   }
   
   measure: average_growth_index_score {
