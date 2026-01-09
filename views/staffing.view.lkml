@@ -68,6 +68,7 @@ view: staffing {
   }
 
   dimension: teacher_id {
+    primary_key: yes
     type: string
     sql: ${TABLE}.TeacherID ;;
   }
