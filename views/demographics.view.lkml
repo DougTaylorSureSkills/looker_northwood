@@ -70,10 +70,10 @@ view: demographics {
 measure: distinct_students_in_subgroup {
   label: "Distinct Students in Subgroup"
   type: count_distinct
-  sql: ${student_id} ;;
+  sql: CONCAT(${student_id}, ",", ${subgroup}) ;;
   # Filter the measure to only include students where the subgroup is set
-  filters: [subgroup: "-NULL"]
-  drill_fields: [student_id]
+  #filters: [subgroup: "-NULL"]
+  #drill_fields: [student_id]
 }
 
 measure: students_making_gains {
