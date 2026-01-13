@@ -1,3 +1,3 @@
-#Looker Project
+# Looker Project
 
-##Northwood High School Student and Course K12 Data
+## Northwood High School Student and Course K12 Data
